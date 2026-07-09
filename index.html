@@ -39,45 +39,17 @@
     }
     .sd { background: #2563eb; }
     .usb { background: #16a34a; }
-    section {
-      display: none;
-      margin-top: 20px;
-      padding: 16px;
-      border-radius: 14px;
-      background: #1f2937;
-    }
-    section.active { display: block; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Choose a Storage Type</h1>
-    <p>Click one button to jump to that section.</p>
+    <p>Click one button to continue.</p>
 
     <div class="buttons">
-      <button class="sd" onclick="showSection('sd-section')">SD Card</button>
-      <button class="usb" onclick="showSection('usb-section')">USB</button>
+      <button class="sd" onclick="alert('SD Card clicked')">SD Card</button>
+      <button class="usb" onclick="window.location.href='https://github.com/LostCannon97363/WiiU-mod-guide/usb/1.html'">USB</button>
     </div>
-
-    <section id="sd-section">
-      <h2>SD Card Section</h2>
-      <p>You clicked the SD Card button.</p>
-    </section>
-
-    <section id="usb-section">
-      <h2>USB Section</h2>
-      <p>You clicked the USB button.</p>
-    </section>
   </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(section => {
-        section.classList.remove("active");
-      });
-      document.getElementById(id).classList.add("active");
-      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
 </body>
 </html>
