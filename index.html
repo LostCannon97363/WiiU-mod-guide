@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Storage Selector</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #0f172a;
+      color: white;
+    }
+    .card {
+      text-align: center;
+      background: #111827;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      width: min(90vw, 420px);
+    }
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: 0;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+    }
+    .sd { background: #2563eb; }
+    .usb { background: #16a34a; }
+    section {
+      display: none;
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #1f2937;
+    }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Choose a Storage Type</h1>
+    <p>Click one button to jump to that section.</p>
+
+    <div class="buttons">
+      <button class="sd" onclick="showSection('sd-section')">SD Card</button>
+      <button class="usb" onclick="showSection('usb-section')">USB</button>
+    </div>
+
+    <section id="sd-section">
+      <h2>SD Card Section</h2>
+      <p>You clicked the SD Card button.</p>
+    </section>
+
+    <section id="usb-section">
+      <h2>USB Section</h2>
+      <p>You clicked the USB button.</p>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
