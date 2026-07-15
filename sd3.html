@@ -66,6 +66,48 @@
  <button class="reccomended2" onclick="window.location.href='https://github.com/Sudachi-E/RiiStream/releases/download/V1.0/RiiStreamPlugin.zip'">RiiStream part 2 (Aroma plugin)</button>
  <button class="reccomended2" onclick="window.location.href='https://github.com/Sudachi-E/ScreenCapturePlugin/releases/download/V1.0.0/Screen_Capture.wps'">Screen Capture</button>
  <button class="bundle" onclick="alert('This bundle isnt avalible yet, sorry!')">Complete bundle</button>
+ <div id="popup" class="popup hidden">
+  <div class="popup-box">
+    <p id="popup-text"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<style>
+  .popup.hidden { display: none; }
+  .popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .popup-box {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  }
+  .popup-box button {
+    margin-top: 12px;
+    padding: 8px 16px;
+  }
+</style>
+
+<script>
+  function showPopup(message) {
+    document.getElementById('popup-text').textContent = message;
+    document.getElementById('popup').classList.remove('hidden');
+  }
+
+  function closePopup() {
+    document.getElementById('popup').classList.add('hidden');
+  }
+</script>
  <head>
     <title>SD guide downloads</title>
   </head>
