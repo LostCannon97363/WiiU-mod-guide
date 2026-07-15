@@ -1,4 +1,55 @@
 <head>
  <title>SD guide</title>
 </head>
-<p></p>
+<body>
+ <img src="https://wiiu.hacks.guide/assets/img/guide/PLL.png" alt="Description of image">
+ <div class="box" onclick="toggleBox()">Click me to reveal an example 💾SD card file structure<div id="hiddenText" class="hidden">
+   💾sd:
+ ┗ 📂wiiu
+   ┣ 📂apps
+   ┃ ┣ 📂AromaUpdater
+   ┃ ┃ ┗📜AromaUpdater.wuhb
+   ┃ ┣ 📜PayloadLoaderInstaller.wuhb
+   ┃ ┗ (All other apps should be here too)
+   ┣ 📂environments
+   ┃ ┗ 📂aroma
+   ┃   ┣ 📂modules
+   ┃   ┃ ┣ 📂setup
+   ┃   ┃ ┃ ┣ 📜00_mocha.rpx
+   ┃   ┃ ┃ ┣ 📜10_wums_loader.rpx
+   ┃   ┃ ┃ ┗ 📜99_autoboot.rpx
+   ┃   ┃ ┗ (All other Aroma modules ending with .wms should be here too)
+   ┃   ┣ 📂plugins
+   ┃   ┃ ┣ 📜AromaBasePlugin.wps
+   ┃   ┃ ┣ 📜drc_region_free.wps
+   ┃   ┃ ┣ 📜homebrew_on_menu.wps
+   ┃   ┃ ┣ 📜regionfree.wps
+   ┃   ┃ ┗ (All other Aroma plugins ending with .wps should be here too)
+   ┃   ┗ 📜root.rpx
+   ┣ 📂payloads
+   ┃ ┣ 📂default
+   ┃ ┃ ┗ 📜payload.elf
+   ┃ ┗ 📂nanddumper
+   ┃   ┗ 📜payload.elf
+   ┣ 📜payload.rpx
+   ┗ 📜payload.elf
+  </div>
+</div>
+
+<style>
+  .hidden { display: none; }
+  .box {
+    padding: 12px;
+    background: #eee;
+    cursor: pointer;
+    width: fit-content;
+  }
+</style>
+
+<script>
+  function toggleBox() {
+    document.getElementById('hiddenText').classList.toggle('hidden');
+  }
+</script>
+
+</body>
